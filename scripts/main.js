@@ -19,7 +19,7 @@ function tickEvent (eventData) {
                         try {
                             player.runCommand('damage @s 2');
                         } catch {
-                            playerMovement[player.name] = 0;
+                            
                         }
                     }
                     playerMovement[player.name] = Math.min(timer, playerMovement[player.name] + randInt(2,10));
