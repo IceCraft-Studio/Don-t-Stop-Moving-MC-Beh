@@ -1,24 +1,30 @@
 {
+    "metadata": {
+        "authors": ["PavelDobCZ23"],
+        "license": "CC BY-NC-ND 4.0",
+        "url": "https://www.icecraftstudio.repl.co"
+    },
     "format_version": 2,
     "header": {
         "description": "Make sure to move or else... you'll die! §9Made by PavelDobCZ23",
         "name": "Don't Stop Moving",
         "uuid": "e8720e7a-a0ba-4f1f-a085-1e3f1bef6ec4",
-        "version": [ 0, 2, 0 ],
-        "min_engine_version": [ 1, 18, 10 ]
+        "version": [ 1, 1, 0 ],
+        "min_engine_version": [ 1, 19, 0 ]
     },
     "modules": [
         {
             "description": "Don't Stop Moving [BP] - data module",
             "type": "data",
             "uuid": "7023c32d-c8e3-47d4-b14e-15dc01bf155e",
-            "version": [0, 2, 0]
+            "version": [1, 1, 0]
         },
         {
             "description": "Don't Stop Moving [BP] - script module",
-            "type": "javascript",
+            "type": "script",
+            "language": "javascript",
             "uuid": "039ce6f0-df97-488d-8633-f231b5ea234a",
-            "version": [0, 2, 0],
+            "version": [1, 1, 0],
             "entry": "scripts/main.js"
         }
     ],
