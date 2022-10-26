@@ -1,7 +1,7 @@
 {
     "metadata": {
         "authors": ["PavelDobCZ23"],
-        "license": "CC BY-NC-ND 4.0",
+        "license": "GNU GPL v3 + The Commons Clause",
         "url": "https://www.icecraftstudio.repl.co"
     },
     "format_version": 2,
@@ -9,36 +9,34 @@
         "description": "Make sure to move or else... you'll die! §9Made by PavelDobCZ23",
         "name": "Don't Stop Moving",
         "uuid": "e8720e7a-a0ba-4f1f-a085-1e3f1bef6ec4",
-        "version": [ 1, 2, 0 ],
-        "min_engine_version": [ 1, 19, 0 ]
+        "version": [ 1, 3, 0 ],
+        "min_engine_version": [ 1, 19, 40 ]
     },
     "modules": [
         {
             "description": "Don't Stop Moving [BP] - data module",
             "type": "data",
             "uuid": "7023c32d-c8e3-47d4-b14e-15dc01bf155e",
-            "version": [1, 2, 0]
+            "version": [1, 3, 0]
         },
         {
             "description": "Don't Stop Moving [BP] - script module",
             "type": "script",
             "language": "javascript",
             "uuid": "039ce6f0-df97-488d-8633-f231b5ea234a",
-            "version": [1, 2, 0],
+            "version": [1, 3, 0],
             "entry": "scripts/main.js"
         }
     ],
 	"dependencies": [
 		{
-			"description": "mojang-gametest",
-			"uuid": "6f4b6893-1bb6-42fd-b458-7fa3d0c89616",
+			"module_name": "mojang-minecraft",
 			"version": "1.0.0-beta"
-		},
-		{
-			"description": "mojang-minecraft",
-			"uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
-			"version": "1.0.0-beta"
-		}
+		}//,
+		//{
+		//	"uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
+		//	"version": "1.0.0-beta"
+		//}
 	],
     "subpacks": [
         {

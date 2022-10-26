@@ -1,41 +1,36 @@
-import {world} from "mojang-minecraft";
+import {world,system} from "@minecraft/server";
 import {timer} from "./modules/addon_options.js";
-var playerMovement = new Object;
-
-world.events.tick.subscribe(eventData => tickEvent(eventData));
+var playerMovement = {};
 
 function randInt(min, max) {
       max++;
       return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function tickEvent (eventData) {
+async function tickEvent(eventData) {
+    system.run(tickEvent);
     if (eventData.currentTick % 5 === 0) {
         for (const player of world.getPlayers()) {
-            if (Object.keys(playerMovement).includes(player.name)) {
+            if (player.id in playerMovement) {
                 const velocity = player.velocity.x + player.velocity.z;
-                //Not moving:
-                if ((-0.001 < velocity) && (velocity < 0.001) || playerMovement[player.name] < 0) {
-                    if (playerMovement[player.name] === timer && eventData.currentTick % 20 === 0) {
+                if ((-0.001 < velocity) && (velocity < 0.001) || playerMovement[player.id] < 0) {
+                    if (playerMovement[player.id] === timer && eventData.currentTick % 20 === 0) {
                         try {
-                            player.runCommand('damage @s 2');
-                        } catch {
-
-                        }
+                            await player.runCommandAsync('damage @s 2');
+                        } catch {}
                     }
-                    playerMovement[player.name] = Math.min(timer, playerMovement[player.name] + randInt(2,10));
-                //Moving:
-                } else if (playerMovement[player.name] >= 0) {
-                    playerMovement[player.name] = Math.max(0, playerMovement[player.name] - randInt(1,5));
+                    playerMovement[player.id] = Math.min(timer, playerMovement[player.id] + randInt(2,10));
+                } else if (playerMovement[player.id] >= 0) {
+                    playerMovement[player.id] = Math.max(0, playerMovement[player.id] - randInt(1,5));
                 }
-                //Check if dead:
                 if (player.getComponent('minecraft:health').current === 0) {
-                    playerMovement[player.name] = 0;
+                    playerMovement[player.id] = -20;
                 }
-            //Check if player just loaded:
             } else {
-                playerMovement[player.name] = -275;
+                playerMovement[player.id] = -275;
             }
         }
     }
 }
+
+system.run(tickEvent);
