@@ -1,30 +1,24 @@
 {
-	"metadata": {
+    "metadata": {
         "authors": ["PavelDobCZ23"],
         "license": "GNU GPL v3 + The Commons Clause",
         "url": "https://www.icecraftstudio.repl.co"
     },
     "format_version": 2,
     "header": {
-        "description": "Any block you break will now spawn a random mob! Good luck. §9Made by PavelDobCZ23",
-        "name": "Broken Blocks Spawn Mobs",
-        "uuid": "8186a5c4-2ff6-4ae3-851d-cc064b3ebf15",
-        "version": [ 1, 4, 0 ],
-        "min_engine_version": [ 1, 19, 50 ]
+        "description": "Make sure to move or else... you'll die! §9Made by PavelDobCZ23",
+        "name": "Don't Stop Moving",
+        "uuid": "e8720e7a-a0ba-4f1f-a085-1e3f1bef6ec4",
+        "version": [ 1, 6, 0 ],
+        "min_engine_version": [ 1, 19, 70 ]
     },
     "modules": [
         {
-            "description": "Broken Blocks Spawn Mobs [BP] - data module",
-            "type": "data",
-            "uuid": "02f9fff8-b396-4b0e-8dc8-8f4248720e95",
-            "version": [1, 4, 0]
-        },
-        {
-            "description": "Broken Blocks Spawn Mobs [BP] - script module",
+            "description": "Don't Stop Moving [BP] - script module",
             "type": "script",
             "language": "javascript",
-            "uuid": "dba56e9e-7496-4366-a01e-8ed733aeaa59",
-            "version": [1, 4, 0],
+            "uuid": "039ce6f0-df97-488d-8633-f231b5ea234a",
+            "version": [1, 6, 0],
             "entry": "scripts/main.js"
         }
     ],
@@ -39,16 +33,11 @@
             "folder_name": "easy",
             "name": "§aEasy Mode",
             "memory_tier": 0
-       },
-       {
-           "folder_name": "hard",
-           "name": "§4Hard Mode",
-           "memory_tier": 0
-      },        
-      {
+        },  
+        {
            "folder_name": "normal",
            "name": "Normal Mode",
            "memory_tier": 0
-      }
+        }
     ]
 }
